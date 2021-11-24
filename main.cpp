@@ -320,7 +320,7 @@ void RegisterGameInDatabase() {
     std::string age;
     std::string name;
     std::string platform;
-    std::string desc;
+    char desc[32];
 
     cout << "\n \n";
 
@@ -334,7 +334,8 @@ void RegisterGameInDatabase() {
     cin >> platform;
 
     cout << "Digite a descrição do jogo: ";
-    cin >> desc;
+    cin.ignore();
+    cin.getline(desc, sizeof(desc));
 
     if (file.is_open()) {
 
